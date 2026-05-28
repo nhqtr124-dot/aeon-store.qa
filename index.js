@@ -27,4 +27,6 @@ client.once('ready', ()=>{
  console.log(`${client.user.tag} online`);
 });
 
-client.login(process.env.DISCORD_TOKEN);
+if (process.env.DISCORD_TOKEN) {
+  client.login(process.env.DISCORD_TOKEN).catch(console.error);
+}
